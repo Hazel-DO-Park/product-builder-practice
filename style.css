@@ -1,10 +1,20 @@
 :root {
-    --primary-color: #4CAF50; /* A fresh green */
-    --secondary-color: #FF9800; /* A warm orange */
+    --primary-color: #4CAF50;
+    --secondary-color: #FF9800;
     --text-color: #333;
     --background-color: #f4f6f8;
     --card-background: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --input-border: #ddd;
+    --transition-speed: 0.3s;
+}
+
+[data-theme='dark'] {
+    --text-color: #e0e0e0;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --input-border: #444;
 }
 
 body {
@@ -13,16 +23,53 @@ body {
     color: var(--text-color);
     margin: 0;
     line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 header {
     background-color: var(--primary-color);
     color: white;
-    text-align: center;
     padding: 3rem 1rem;
     background: linear-gradient(45deg, var(--primary-color), #66BB6A);
     text-shadow: 0 2px 4px var(--shadow-color);
+    position: relative;
 }
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.theme-btn {
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Toggle icons */
+[data-theme='dark'] .icon-sun { display: block; }
+[data-theme='dark'] .icon-moon { display: none; }
+[data-theme='light'] .icon-sun { display: none; }
+[data-theme='light'] .icon-moon { display: block; }
+.icon-sun, .icon-moon { transition: opacity 0.3s ease; }
 
 header h1 {
     margin: 0;
@@ -55,8 +102,10 @@ main {
     max-width: 500px;
     padding: 1rem;
     font-size: 1.1rem;
-    border: 2px solid #ddd;
+    border: 2px solid var(--input-border);
     border-radius: 50px;
+    background-color: var(--card-background);
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 

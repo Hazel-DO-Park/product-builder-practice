@@ -17,6 +17,17 @@ class RecipeCard extends HTMLElement {
 
 customElements.define('recipe-card', RecipeCard);
 
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+document.body.setAttribute('data-theme', currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+});
 
 const recipes = [
     {
