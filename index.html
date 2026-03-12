@@ -1,14 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <h1>Find Your Perfect Dish</h1>
+        <p>Enter ingredients you have, and we'll suggest delicious recipes!</p>
+    </header>
+    <main>
+        <div class="input-section">
+            <input type="text" id="ingredient-input" placeholder="e.g., chicken, rice, tomatoes">
+            <button id="recommend-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Recommend</span>
+            </button>
+        </div>
+        <div id="results-container" class="results-grid">
+            <!-- Recommended recipes will be inserted here -->
+        </div>
+    </main>
+
+    <template id="recipe-card-template">
+        <style>
+            .recipe-card {
+                background-color: var(--card-background, #fff);
+                border-radius: 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .recipe-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.2);
+            }
+            .card-image {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+            .card-content {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+            .card-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--text-color, #333);
+                margin: 0 0 10px;
+            }
+            .card-description {
+                font-size: 1rem;
+                color: var(--text-color, #666);
+                flex-grow: 1;
+            }
+        </style>
+        <div class="recipe-card">
+            <img class="card-image" src="https://via.placeholder.com/300x180" alt="Recipe Image">
+            <div class="card-content">
+                <h3 class="card-title"></h3>
+                <p class="card-description"></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="main.js" type="module"></script>
 </body>
 </html>
