@@ -191,6 +191,14 @@ main {
     transform: translateY(-2px);
 }
 
+.comments-section {
+    margin-top: 5rem;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
 #recommend-btn {
     padding: 1rem 2rem;
     font-size: 1.1rem;
