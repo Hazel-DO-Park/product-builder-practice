@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Recommender</title>
+    <title>Zucchini - Smart Ingredient-Based Recipe Recommender</title>
+    <meta name="description" content="Discover delicious recipes based on the ingredients you already have. Zucchini helps you reduce food waste and cook creative meals every day.">
     <meta name="google-adsense-account" content="ca-pub-8431660911273311">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8431660911273311"
      crossorigin="anonymous"></script>
@@ -11,6 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Zucchini</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#recommend">Find Recipes</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <div class="header-content">
             <h1>Find Your Perfect Dish</h1>
@@ -21,19 +34,42 @@
             </button>
         </div>
     </header>
+
     <main>
-        <div class="input-section">
+        <section id="about" class="intro-section">
+            <div class="section-container">
+                <h2>Why Zucchini?</h2>
+                <p>Zucchini is a smart cooking companion designed to help home cooks make the most of their kitchen. We believe that great meals don't always require a trip to the grocery store. By simply entering the ingredients you have on hand, Zucchini provides curated recipe suggestions that are both delicious and easy to prepare.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>Reduce Waste</h3>
+                        <p>Use up those leftover vegetables and proteins before they expire.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Save Money</h3>
+                        <p>Cook with what you already bought instead of ordering takeout.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Stay Creative</h3>
+                        <p>Discover new combinations and international cuisines you haven't tried before.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommend" class="input-section">
             <input type="text" id="ingredient-input" placeholder="e.g., chicken, rice, tomatoes">
             <button id="recommend-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <span>Recommend</span>
             </button>
-        </div>
+        </section>
+
         <div id="results-container" class="results-grid">
             <!-- Recommended recipes will be inserted here -->
         </div>
 
-        <section class="contact-section">
+        <section id="contact" class="contact-section">
             <h2>Partnership Inquiry</h2>
             <p>Interested in collaborating with us? Send us a message!</p>
             <form action="https://formspree.io/f/mdawzoly" method="POST" class="contact-form">
@@ -51,6 +87,13 @@
                 </div>
                 <button type="submit" class="submit-btn">Send Inquiry</button>
             </form>
+        </section>
+
+        <section id="privacy" class="privacy-section">
+            <div class="section-container">
+                <h2>Privacy Policy</h2>
+                <p>At Zucchini, we prioritize your privacy. We do not store your personal ingredient data on our servers. The ingredients you enter are used solely to filter recipes locally or via our algorithm. We use Google AdSense to serve ads, which may use cookies to provide a better user experience. By using our site, you agree to our use of these technologies.</p>
+            </div>
         </section>
 
         <section class="comments-section">
@@ -75,6 +118,17 @@
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Zucchini Recipe Recommender. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <template id="recipe-card-template">
         <style>
