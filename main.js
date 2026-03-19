@@ -1,34 +1,3 @@
-class RecipeCard extends HTMLElement {
-    constructor() {
-        super();
-        const template = document.getElementById('recipe-card-template').content;
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-        shadowRoot.appendChild(template.cloneNode(true));
-    }
-
-    connectedCallback() {
-        const shadowRoot = this.shadowRoot;
-        shadowRoot.querySelector('.card-title').innerText = this.getAttribute('title');
-        shadowRoot.querySelector('.card-description').innerText = this.getAttribute('description');
-        shadowRoot.querySelector('.card-image').src = this.getAttribute('image');
-        shadowRoot.querySelector('.card-image').alt = this.getAttribute('title');
-    }
-}
-
-customElements.define('recipe-card', RecipeCard);
-
-// Theme Toggle Logic
-const themeToggle = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme') || 'light';
-
-document.body.setAttribute('data-theme', currentTheme);
-
-themeToggle.addEventListener('click', () => {
-    const theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.body.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-});
-
 const recipes = [
     {
         name: 'Spaghetti Carbonara',
@@ -42,7 +11,7 @@ const recipes = [
         image: 'https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-plate.jpg',
         ingredients: ['chicken', 'fettuccine', 'cream', 'parmesan', 'butter']
     },
-        {
+    {
         name: 'Classic Beef Tacos',
         description: 'A timeless favorite, these beef tacos are perfect for any night of the week.',
         image: 'https://static01.nyt.com/images/2022/10/12/dining/11taco-methods-14/11taco-methods-14-mediumSquareAt3X.jpg',
@@ -68,24 +37,70 @@ const recipes = [
     }
 ];
 
+function createRecipeCard(recipe) {
+    const template = document.getElementById('recipe-card-template');
+    const card = template.content.cloneNode(true);
+    
+    card.querySelector('.card-title').textContent = recipe.name;
+    card.querySelector('.card-description').textContent = recipe.description;
+    card.querySelector('.card-image').src = recipe.image;
+    card.querySelector('.card-image').alt = recipe.name;
+    
+    return card;
+}
 
-document.getElementById('recommend-btn').addEventListener('click', () => {
-    const input = document.getElementById('ingredient-input').value;
-    const ingredients = input.toLowerCase().split(',').map(item => item.trim()).filter(item => item);
-    const resultsContainer = document.getElementById('results-container');
-    resultsContainer.innerHTML = ''; 
-
-    if (ingredients.length === 0) return;
-
-    const recommendedRecipes = recipes.filter(recipe => {
-        return ingredients.some(ingredient => recipe.ingredients.includes(ingredient));
+function displayRecipes(recipeList) {
+    const container = document.getElementById('results-container');
+    container.innerHTML = '';
+    
+    if (recipeList.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No recipes found. Try different ingredients!</p>';
+        return;
+    }
+    
+    recipeList.forEach(recipe => {
+        container.appendChild(createRecipeCard(recipe));
     });
+}
 
-    recommendedRecipes.forEach(recipe => {
-        const recipeCard = document.createElement('recipe-card');
-        recipeCard.setAttribute('title', recipe.name);
-        recipeCard.setAttribute('description', recipe.description);
-        recipeCard.setAttribute('image', recipe.image);
-        resultsContainer.appendChild(recipeCard);
-    });
+// Initial display of featured recipes
+document.addEventListener('DOMContentLoaded', () => {
+    // Show first 3 recipes as featured
+    displayRecipes(recipes.slice(0, 3));
+    
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', currentTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    }
+
+    // Recommend Button Logic
+    const recommendBtn = document.getElementById('recommend-btn');
+    if (recommendBtn) {
+        recommendBtn.addEventListener('click', () => {
+            const input = document.getElementById('ingredient-input').value;
+            const userIngredients = input.toLowerCase().split(',').map(item => item.trim()).filter(item => item);
+            
+            if (userIngredients.length === 0) {
+                displayRecipes(recipes.slice(0, 3)); // Reset to featured
+                return;
+            }
+
+            const filteredRecipes = recipes.filter(recipe => {
+                return userIngredients.some(ingredient => recipe.ingredients.includes(ingredient));
+            });
+
+            displayRecipes(filteredRecipes);
+            
+            // Scroll to results
+            document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });
