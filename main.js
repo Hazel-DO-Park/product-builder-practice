@@ -3,7 +3,7 @@ const recipes = [
         name: 'Spaghetti Carbonara',
         description: 'A classic Italian pasta dish with a creamy egg-based sauce, pancetta, and cheese.',
         image: 'https://www.allrecipes.com/thmb/Vg2GXE_3Ftr4Vwe-zI_v--e_i4w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/44813-spaghetti-carbonara-ii-DDMFS-4x3-3444033333a948329622a5a58a74f4b2.jpg',
-        ingredients: ['pasta', 'eggs', 'pancetta', 'parmesan', 'pepper']
+        ingredients: ['pasta', 'eggs', 'pancetta', 'parmesan', 'pepper', 'egg', 'spaghetti', 'cheese', 'onion', 'garlic', 'bacon']
     },
     {
         name: 'Chicken Alfredo',
@@ -32,8 +32,8 @@ const recipes = [
     {
         name: 'Chicken Stir-Fry',
         description: 'A quick and healthy stir-fry with tender chicken and a variety of colorful vegetables.',
-        image: 'https://www.allrecipes.com/thmb/k9Eea23AAG2L1Sq2f3aX-c2yNfE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/228823-quick-chicken-stir-fry-DDMFS-4x3-1f3f07238d8f4d92a95fe27f10137746.jpg',
-        ingredients: ['chicken', 'broccoli', 'carrots', 'bell pepper', 'soy sauce', 'rice']
+        image: 'https://www.proteinprepper.com/wp-content/uploads/2026/02/Healthy-Chicken-Stir-Fry-Skillet-1.jpg',
+        ingredients: ['chicken', 'broccoli', 'carrots', 'bell pepper', 'soy sauce', 'rice', 'carrot', 'fry', 'stir']
     }
 ];
 
@@ -81,26 +81,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Search Functionality
+    function performSearch() {
+        const input = document.getElementById('ingredient-input').value;
+        const userIngredients = input.toLowerCase().split(',').map(item => item.trim()).filter(item => item);
+        
+        if (userIngredients.length === 0) {
+            displayRecipes(recipes.slice(0, 3)); // Reset to featured
+            return;
+        }
+
+        const filteredRecipes = recipes.filter(recipe => {
+            return userIngredients.some(ingredient => recipe.ingredients.includes(ingredient));
+        });
+
+        displayRecipes(filteredRecipes);
+        
+        // Scroll to results
+        const resultsContainer = document.getElementById('results-container');
+        if (resultsContainer) {
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     // Recommend Button Logic
     const recommendBtn = document.getElementById('recommend-btn');
     if (recommendBtn) {
-        recommendBtn.addEventListener('click', () => {
-            const input = document.getElementById('ingredient-input').value;
-            const userIngredients = input.toLowerCase().split(',').map(item => item.trim()).filter(item => item);
-            
-            if (userIngredients.length === 0) {
-                displayRecipes(recipes.slice(0, 3)); // Reset to featured
-                return;
+        recommendBtn.addEventListener('click', performSearch);
+    }
+
+    // Enter Key Logic for Input
+    const ingredientInput = document.getElementById('ingredient-input');
+    if (ingredientInput) {
+        ingredientInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
             }
-
-            const filteredRecipes = recipes.filter(recipe => {
-                return userIngredients.some(ingredient => recipe.ingredients.includes(ingredient));
-            });
-
-            displayRecipes(filteredRecipes);
-            
-            // Scroll to results
-            document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
         });
     }
 });
