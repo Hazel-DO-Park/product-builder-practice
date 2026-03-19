@@ -2,168 +2,168 @@ const recipes = [
     // --- Pasta & Noodles ---
     {
         name: 'Spaghetti Carbonara',
-        description: 'A classic Italian pasta dish with a creamy egg-based sauce, pancetta, and cheese.',
-        image: 'https://www.allrecipes.com/thmb/Vg2GXE_3Ftr4Vwe-zI_v--e_i4w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/44813-spaghetti-carbonara-ii-DDMFS-4x3-3444033333a948329622a5a58a74f4b2.jpg',
+        description: '계란 기반의 크리미한 소스, 판체타, 치즈가 어우러진 클래식 이탈리안 파스타입니다.',
+        image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['pasta', 'eggs', 'pancetta', 'bacon', 'parmesan', 'pepper']
     },
     {
         name: 'Chicken Alfredo',
-        description: 'Creamy and rich fettuccine alfredo with tender chicken breast.',
-        image: 'https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-plate.jpg',
+        description: '부드러운 닭가슴살을 곁들인 크리미하고 풍부한 맛의 페투치니 알프레도입니다.',
+        image: 'https://images.unsplash.com/photo-1645112481351-9ee2c1c965d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['chicken', 'fettuccine', 'pasta', 'cream', 'parmesan', 'butter']
     },
     {
         name: 'Pesto Pasta',
-        description: 'Fresh basil pesto tossed with pasta and cherry tomatoes.',
-        image: 'https://www.twopeasandtheirpod.com/wp-content/uploads/2019/06/Basil-Pesto-Pasta-3.jpg',
+        description: '신선한 바질 페스토와 방울토마토가 어우러진 파스타입니다.',
+        image: 'https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['pasta', 'basil', 'pine nuts', 'parmesan', 'garlic', 'olive oil']
     },
     {
         name: 'Pad Thai',
-        description: 'A popular Thai stir-fried noodle dish with eggs, peanuts, and bean sprouts.',
-        image: 'https://tastesbetterfromscratch.com/wp-content/uploads/2018/08/Pad-Thai-8.jpg',
+        description: '계란, 땅콩, 숙주가 들어간 태국의 인기 볶음 쌀국수 요리입니다.',
+        image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['rice noodles', 'eggs', 'peanuts', 'bean sprouts', 'shrimp', 'chicken', 'tofu', 'lime']
     },
     {
         name: 'Macaroni and Cheese',
-        description: 'Classic comfort food with tender macaroni in a rich, cheesy sauce.',
-        image: 'https://www.momontimeout.com/wp-content/uploads/2018/11/homemade-mac-and-cheese-recipe.jpg',
+        description: '풍부하고 치즈 맛이 가득한 소스에 버무린 정통 맥앤치즈입니다.',
+        image: 'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['macaroni', 'pasta', 'cheese', 'cheddar', 'milk', 'butter', 'flour']
     },
 
     // --- Rice & Grains ---
     {
         name: 'Chicken Stir-Fry',
-        description: 'A quick and healthy stir-fry with tender chicken and a variety of colorful vegetables.',
-        image: 'https://www.allrecipes.com/thmb/k9Eea23AAG2L1Sq2f3aX-c2yNfE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/228823-quick-chicken-stir-fry-DDMFS-4x3-1f3f07238d8f4d92a95fe27f10137746.jpg',
+        description: '부드러운 닭고기와 다양한 채소를 함께 볶아낸 빠르고 건강한 요리입니다.',
+        image: 'https://images.unsplash.com/photo-1512058560366-cd2429bb5c5c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['chicken', 'broccoli', 'carrots', 'bell pepper', 'soy sauce', 'rice']
     },
     {
         name: 'Vegetable Fried Rice',
-        description: 'A great way to use up leftover rice and veggies.',
-        image: 'https://www.gimmesomeoven.com/wp-content/uploads/2014/03/Fried-Rice-7.jpg',
+        description: '남은 밥과 채소를 활용하기 좋은 최고의 메뉴입니다.',
+        image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['rice', 'eggs', 'peas', 'carrots', 'corn', 'soy sauce', 'green onions']
     },
     {
         name: 'Mushroom Risotto',
-        description: 'Creamy Italian rice dish cooked with broth and savory mushrooms.',
-        image: 'https://cdn.loveandlemons.com/wp-content/uploads/2023/01/mushroom-risotto.jpg',
+        description: '풍미 가득한 버섯과 육수로 요리한 크리미한 이탈리안 쌀 요리입니다.',
+        image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['arborio rice', 'rice', 'mushrooms', 'vegetable broth', 'parmesan', 'white wine', 'onion']
     },
     {
         name: 'Kimchi Fried Rice',
-        description: 'Spicy and flavorful fried rice made with fermented kimchi.',
-        image: 'https://www.koreanbapsang.com/wp-content/uploads/2018/02/Kimchi-Fried-Rice-3.jpg',
+        description: '잘 익은 김치로 만든 매콤하고 풍미 가득한 김치볶음밥입니다.',
+        image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['rice', 'kimchi', 'gochujang', 'eggs', 'sesame oil', 'green onions']
     },
 
     // --- Chicken & Beef ---
     {
         name: 'Classic Beef Tacos',
-        description: 'A timeless favorite, these beef tacos are perfect for any night of the week.',
-        image: 'https://static01.nyt.com/images/2022/10/12/dining/11taco-methods-14/11taco-methods-14-mediumSquareAt3X.jpg',
+        description: '언제 먹어도 맛있는 정통 소고기 타코입니다.',
+        image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['ground beef', 'beef', 'taco shells', 'tortilla', 'lettuce', 'tomato', 'cheese', 'sour cream']
     },
     {
         name: 'Roast Chicken',
-        description: 'Juicy roasted chicken with crispy skin and herbs.',
-        image: 'https://www.recipetineats.com/wp-content/uploads/2017/04/Roast-Chicken-Dinner-3.jpg',
+        description: '허브 향이 가득하고 껍질은 바삭, 속은 촉촉한 로스트 치킨입니다.',
+        image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['whole chicken', 'chicken', 'lemon', 'garlic', 'thyme', 'rosemary', 'butter']
     },
     {
         name: 'Beef Stew',
-        description: 'Hearty and comforting stew with chunks of beef and root vegetables.',
-        image: 'https://www.onceuponachef.com/images/2011/02/Beef-Stew-1.jpg',
+        description: '소고기와 뿌리 채소를 듬뿍 넣어 푹 끓인 든든한 스튜입니다.',
+        image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['beef chuck', 'beef', 'potatoes', 'carrots', 'onion', 'beef broth', 'red wine']
     },
     {
         name: 'Chicken Curry',
-        description: 'A rich and aromatic curry with tender chicken pieces.',
-        image: 'https://www.averiecooks.com/wp-content/uploads/2015/09/chickencurry-15.jpg',
+        description: '부드러운 닭고기가 들어간 진하고 향긋한 카레입니다.',
+        image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['chicken', 'curry powder', 'coconut milk', 'onion', 'garlic', 'ginger', 'rice']
     },
     {
         name: 'Grilled Steak',
-        description: 'Perfectly grilled steak with a simple seasoning.',
-        image: 'https://www.dinneratthezoo.com/wp-content/uploads/2020/05/grilled-steak-5.jpg',
+        description: '간단한 시즈닝으로 완벽하게 구워낸 스테이크입니다.',
+        image: 'https://images.unsplash.com/photo-1546241072-48010ad28c2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['steak', 'beef', 'salt', 'pepper', 'garlic butter', 'rosemary']
     },
 
     // --- Salads & Soups ---
     {
         name: 'Tomato Basil Soup',
-        description: 'A creamy and flavorful soup made with ripe tomatoes and fresh basil.',
-        image: 'https://www.allrecipes.com/thmb/3_s02ssQGZ_07tL48X_i2s2DSWM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/12985-creamy-tomato-soup-DDMFS-4x3-0947-82c5f76f082d49c19b67482f34800361.jpg',
+        description: '잘 익은 토마토와 신선한 바질로 만든 크리미한 수프입니다.',
+        image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['tomatoes', 'basil', 'onion', 'garlic', 'vegetable broth', 'cream']
     },
     {
         name: 'Caprese Salad',
-        description: 'A simple and elegant Italian salad with fresh mozzarella, tomatoes, and basil.',
-        image: 'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-main-1.jpg',
+        description: '신선한 모차렐라, 토마토, 바질이 어우러진 우아한 이탈리안 샐러드입니다.',
+        image: 'https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['mozzarella', 'cheese', 'tomatoes', 'basil', 'balsamic glaze', 'olive oil']
     },
     {
         name: 'Caesar Salad',
-        description: 'Crisp romaine lettuce with creamy caesar dressing and croutons.',
-        image: 'https://www.seriouseats.com/thmb/Fi_FEyVa3_sb98n_CX-41ihHYFc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-best-caesar-salad-recipe-06-40e70f549ba249589d830d129f28e9f6.jpg',
+        description: '아삭한 로메인 상추에 크리미한 드레싱과 크루통을 곁들인 샐러드입니다.',
+        image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['romaine lettuce', 'lettuce', 'croutons', 'parmesan', 'caesar dressing', 'chicken']
     },
     {
         name: 'Greek Salad',
-        description: 'Refreshing salad with cucumbers, tomatoes, olives, and feta cheese.',
-        image: 'https://www.loveandlemons.com/wp-content/uploads/2019/07/greek-salad-2.jpg',
+        description: '오이, 토마토, 올리브, 페타 치즈가 들어간 상큼한 샐러드입니다.',
+        image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['cucumber', 'tomatoes', 'kalamata olives', 'feta cheese', 'red onion', 'oregano']
     },
     {
         name: 'Chicken Noodle Soup',
-        description: 'The ultimate comfort food for a cold day.',
-        image: 'https://www.inspiredtaste.net/wp-content/uploads/2018/09/Easy-Chicken-Noodle-Soup-Recipe-1200.jpg',
+        description: '추운 날 몸을 따뜻하게 해주는 최고의 소울 푸드입니다.',
+        image: 'https://images.unsplash.com/photo-1547592115-0dec33f7e8ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['chicken', 'noodles', 'pasta', 'carrots', 'celery', 'onion', 'chicken broth']
     },
 
     // --- Breakfast & Brunch ---
     {
         name: 'Pancakes',
-        description: 'Fluffy homemade pancakes served with maple syrup.',
-        image: 'https://www.allrecipes.com/thmb/WqWggh6NwG-r8PoeA3OfW908FUY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/21014-Good-Old-Fashioned-Pancakes-mfs_001-1fa26bcdedc345f182537d95b6cf92d8.jpg',
+        description: '메이플 시럽을 곁들인 폭신폭신한 수제 팬케이크입니다.',
+        image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['flour', 'milk', 'eggs', 'sugar', 'baking powder', 'butter', 'maple syrup']
     },
     {
         name: 'French Toast',
-        description: 'Golden brown french toast with a hint of cinnamon.',
-        image: 'https://www.mccormick.com/-/media/project/mccormick-us/mccormick/recipes/quick-and-easy-french-toast-800x800.jpg',
+        description: '시나몬 향이 살짝 가미된 노릇노릇한 프렌치 토스트입니다.',
+        image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['bread', 'eggs', 'milk', 'cinnamon', 'vanilla', 'butter', 'syrup']
     },
     {
         name: 'Omelette',
-        description: 'Classic egg omelette with cheese and vegetables.',
-        image: 'https://www.incredibleegg.org/wp-content/uploads/2020/11/basic-french-omelet-930x620.jpg',
+        description: '치즈와 채소를 듬뿍 넣은 클래식 계란 오믈렛입니다.',
+        image: 'https://images.unsplash.com/photo-1510693395975-2393056e4233?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['eggs', 'cheese', 'spinach', 'mushrooms', 'onions', 'peppers']
     },
     {
         name: 'Avocado Toast',
-        description: 'Crispy toast topped with creamy mashed avocado.',
-        image: 'https://cookieandkate.com/images/2012/04/avocado-toast-with-egg-recipe-1-1.jpg',
+        description: '바삭한 토스트 위에 크리미한 아보카도를 올린 메뉴입니다.',
+        image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['bread', 'avocado', 'lemon', 'salt', 'pepper', 'red pepper flakes', 'eggs']
     },
 
     // --- Easy Snacks & Sides ---
     {
         name: 'Guacamole',
-        description: 'Fresh and spicy avocado dip.',
-        image: 'https://www.cookingclassy.com/wp-content/uploads/2018/05/guacamole-9.jpg',
+        description: '신선하고 매콤한 아보카도 딥 소스입니다.',
+        image: 'https://images.unsplash.com/photo-1541280910158-c4e14f9c94a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['avocado', 'onion', 'tomatoes', 'cilantro', 'lime', 'jalapeno']
     },
     {
         name: 'Bruschetta',
-        description: 'Toasted bread topped with a fresh tomato and basil mixture.',
-        image: 'https://www.jessicagavin.com/wp-content/uploads/2020/07/bruschetta-recipe-10-1200.jpg',
+        description: '토마토와 바질을 올린 바삭한 이탈리안 전채 요리입니다.',
+        image: 'https://images.unsplash.com/photo-1572656631137-7935297eff55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['baguette', 'bread', 'tomatoes', 'basil', 'garlic', 'olive oil', 'balsamic']
     },
     {
         name: 'Quesadilla',
-        description: 'Crispy tortilla filled with melted cheese and other fillings.',
-        image: 'https://www.simplyrecipes.com/thmb/5w9M4h8Jz00j8d7j8k8j7j8j7j8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Quesadilla-LEAD-1-5c7b9b1b7b7b4b7b8b7b9b1b7b7b4b7b.jpg',
+        description: '치즈와 다양한 재료를 넣어 구운 바삭한 또띠아 요리입니다.',
+        image: 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
         ingredients: ['tortilla', 'cheese', 'chicken', 'beef', 'peppers', 'onions']
     }
 ];
