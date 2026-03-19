@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zucchini - Smart Ingredient-Based Recipe Recommender</title>
-    <meta name="description" content="Discover delicious recipes based on the ingredients you already have. Zucchini helps you reduce food waste and cook creative meals every day.">
+    <title>Zucchini - 스마트 식재료 기반 레시피 추천 서비스</title>
+    <meta name="description" content="냉장고 속 재료로 맛있는 요리를 발견하세요. Zucchini는 음식물 쓰레기를 줄이고 매일 창의적인 요리를 할 수 있도록 돕습니다.">
     <meta name="google-adsense-account" content="ca-pub-8431660911273311">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8431660911273311"
      crossorigin="anonymous"></script>
@@ -32,20 +32,20 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Zucchini</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#recommend">Find Recipes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="index.html" class="active">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="#recommend">레시피 찾기</a></li>
+                <li><a href="contact.html">문의</a></li>
+                <li><a href="privacy.html">개인정보처리방침</a></li>
             </ul>
         </div>
     </nav>
 
     <header>
         <div class="header-content">
-            <h1>Find Your Perfect Dish</h1>
-            <p>Enter ingredients you have, and we'll suggest delicious recipes!</p>
-            <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+            <h1>완벽한 요리를 찾아보세요</h1>
+            <p>보유하고 있는 식재료를 입력하시면, 맛있는 레시피를 추천해 드립니다!</p>
+            <button id="theme-toggle" class="theme-btn" aria-label="다크 모드 전환">
                 <span class="icon-sun">☀️</span>
                 <span class="icon-moon">🌙</span>
             </button>
@@ -56,18 +56,18 @@
         <section id="recommend" class="input-section">
             <div class="section-container" style="padding: 0; width: 100%;">
                 <div style="display: flex; gap: 10px; justify-content: center;">
-                    <input type="text" id="ingredient-input" placeholder="e.g., chicken, rice, tomatoes">
+                    <input type="text" id="ingredient-input" placeholder="예: 닭고기, 쌀, 토마토">
                     <button id="recommend-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" cy="21" x2="16.65" y2="16.65"></line></svg>
-                        <span>Recommend</span>
+                        <span>추천받기</span>
                     </button>
                 </div>
             </div>
         </section>
 
         <section class="section-container">
-            <h2>Featured Recipes</h2>
-            <p>Don't know where to start? Try one of our most popular recipes.</p>
+            <h2>인기 레시피</h2>
+            <p>어떤 요리를 할지 고민이신가요? 가장 인기 있는 레시피를 확인해 보세요.</p>
             <div id="results-container" class="results-grid">
                 <!-- Featured recipes will be inserted here by main.js on load -->
             </div>
@@ -75,23 +75,23 @@
 
         <section class="featured-articles">
             <div class="section-container">
-                <h2>Latest from the Kitchen Blog</h2>
-                <p>Tips, tricks, and guides to help you become a master of your kitchen.</p>
+                <h2>키친 블로그 최신글</h2>
+                <p>요리 마스터가 되기 위한 팁과 가이드를 확인하세요.</p>
                 <div class="article-grid">
                     <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Food Waste">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="음식물 쓰레기 줄이기">
                         <div class="article-card-content">
-                            <h3>5 Practical Ways to Reduce Food Waste</h3>
-                            <p>Learn how to minimize waste, save money, and cook more sustainably.</p>
-                            <a href="blog/how-to-reduce-food-waste.html" class="read-more">Read More &rarr;</a>
+                            <h3>음식물 쓰레기를 줄이는 5가지 실천 방법</h3>
+                            <p>쓰레기를 최소화하고 비용을 절약하며 지속 가능한 요리를 하는 방법을 배워보세요.</p>
+                            <a href="blog/how-to-reduce-food-waste.html" class="read-more">더 보기 &rarr;</a>
                         </div>
                     </article>
                     <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1584473457406-6240486418e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pantry Staples">
+                        <img src="https://images.unsplash.com/photo-1584473457406-6240486418e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="필수 식재료">
                         <div class="article-card-content">
-                            <h3>10 Essential Pantry Staples</h3>
-                            <p>The must-have items that allow you to whip up a meal at a moment's notice.</p>
-                            <a href="blog/essential-pantry-staples.html" class="read-more">Read More &rarr;</a>
+                            <h3>주방에 꼭 있어야 할 필수 식재료 10가지</h3>
+                            <p>언제든 맛있는 요리를 뚝딱 만들어낼 수 있는 필수 아이템들을 소개합니다.</p>
+                            <a href="blog/essential-pantry-staples.html" class="read-more">더 보기 &rarr;</a>
                         </div>
                     </article>
                 </div>
@@ -100,27 +100,27 @@
 
         <section id="about" class="intro-section">
             <div class="section-container">
-                <h2>Why Zucchini?</h2>
-                <p>Zucchini is a smart cooking companion designed to help home cooks make the most of their kitchen. We believe that great meals don't always require a trip to the grocery store. By simply entering the ingredients you have on hand, Zucchini provides curated recipe suggestions that are both delicious and easy to prepare.</p>
+                <h2>왜 Zucchini인가요?</h2>
+                <p>Zucchini는 집에서도 주방을 최대한 활용할 수 있도록 돕는 스마트 요리 파트너입니다. 훌륭한 요리를 하기 위해 항상 장을 보러 갈 필요는 없다고 믿습니다. 보유한 식재료만 입력하면, Zucchini가 맛있고 만들기 쉬운 엄선된 레시피를 제안합니다.</p>
                 <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
                     <div class="benefit-item" style="background: var(--card-background); padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                        <h3>Reduce Waste</h3>
-                        <p>Use up those leftover vegetables and proteins before they expire.</p>
+                        <h3>쓰레기 감소</h3>
+                        <p>남아있는 채소와 단백질 식재료가 상하기 전에 모두 사용하세요.</p>
                     </div>
                     <div class="benefit-item" style="background: var(--card-background); padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                        <h3>Save Money</h3>
-                        <p>Cook with what you already bought instead of ordering takeout.</p>
+                        <h3>비용 절약</h3>
+                        <p>배달 음식을 시키는 대신 이미 구매한 식재료로 요리하세요.</p>
                     </div>
                     <div class="benefit-item" style="background: var(--card-background); padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                        <h3>Stay Creative</h3>
-                        <p>Discover new combinations and international cuisines you haven't tried before.</p>
+                        <h3>창의적인 요리</h3>
+                        <p>새로운 조합과 시도해보지 않은 전 세계의 다양한 요리를 발견하세요.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="comments-section section-container">
-            <h2>Community Feedback</h2>
+            <h2>커뮤니티 피드백</h2>
             <div id="disqus_thread"></div>
             <script>
                 (function() {
@@ -138,10 +138,10 @@
         <div class="footer-content">
             <p>&copy; 2026 Zucchini Recipe Recommender. All rights reserved.</p>
             <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+                <li><a href="privacy.html">개인정보처리방침</a></li>
+                <li><a href="contact.html">문의</a></li>
             </ul>
         </div>
     </footer>
