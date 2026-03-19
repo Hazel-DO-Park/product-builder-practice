@@ -224,35 +224,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Search Functionality
+    function performSearch() {
+        const input = document.getElementById('ingredient-input').value;
+        const userIngredients = input.toLowerCase().split(',').map(item => item.trim()).filter(item => item);
+        
+        if (userIngredients.length === 0) {
+            // If input is empty, show default featured
+            displayRecipes(recipes.slice(0, 3)); 
+            return;
+        }
+
+        // 1. Find exact matches
+        let filteredRecipes = recipes.filter(recipe => {
+            return userIngredients.some(ingredient => recipe.ingredients.includes(ingredient));
+        });
+
+        // 2. If fewer than 3 matches, fill with others
+        if (filteredRecipes.length < 3) {
+            const needed = 3 - filteredRecipes.length;
+            const extras = getFallbackRecipes(filteredRecipes, needed);
+            filteredRecipes = filteredRecipes.concat(extras);
+        }
+
+        displayRecipes(filteredRecipes);
+        
+        // Scroll to results
+        document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
+    }
+
     // Recommend Button Logic
     const recommendBtn = document.getElementById('recommend-btn');
     if (recommendBtn) {
-        recommendBtn.addEventListener('click', () => {
-            const input = document.getElementById('ingredient-input').value;
-            const userIngredients = input.toLowerCase().split(',').map(item => item.trim()).filter(item => item);
-            
-            if (userIngredients.length === 0) {
-                // If input is empty, show default featured
-                displayRecipes(recipes.slice(0, 3)); 
-                return;
+        recommendBtn.addEventListener('click', performSearch);
+    }
+
+    // Enter Key Logic for Input
+    const ingredientInput = document.getElementById('ingredient-input');
+    if (ingredientInput) {
+        ingredientInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
             }
-
-            // 1. Find exact matches
-            let filteredRecipes = recipes.filter(recipe => {
-                return userIngredients.some(ingredient => recipe.ingredients.includes(ingredient));
-            });
-
-            // 2. If fewer than 3 matches, fill with others
-            if (filteredRecipes.length < 3) {
-                const needed = 3 - filteredRecipes.length;
-                const extras = getFallbackRecipes(filteredRecipes, needed);
-                filteredRecipes = filteredRecipes.concat(extras);
-            }
-
-            displayRecipes(filteredRecipes);
-            
-            // Scroll to results
-            document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
         });
     }
 });
