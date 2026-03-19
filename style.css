@@ -155,6 +155,12 @@ header {
     padding: 40px 20px;
 }
 
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
 /* Blog/Article Sections */
 .featured-articles {
     background-color: #eee;
